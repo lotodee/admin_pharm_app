@@ -1,0 +1,100 @@
+body{
+    color: #000040;
+}
+
+
+.HeaderBox {
+   
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 30px 20px 0px;
+    margin-bottom: 20px;
+    width: 100%;
+    position: relative;
+    
+    
+    box-shadow: 1px 4px 5px -4px rgba(168,168,168,0.54);
+-webkit-box-shadow: 1px 4px 5px -4px rgba(168,168,168,0.54);
+-moz-box-shadow: 1px 4px 5px -4px rgba(168,168,168,0.54);
+}
+
+.icons{
+   display: flex; 
+   justify-content: space-evenly;
+   gap: 50px;
+   
+}
+
+.icons div{
+   border-radius: 50%; 
+  
+   position: relative;
+   height: 36px;
+   width: 36px;
+   align-items: center;
+   display: flex;
+   justify-content: center;
+   cursor: pointer;
+}
+
+.icons div span{
+    position: absolute;
+    top: -6px;
+    background-color: #FFAF70;
+    left: 30px;
+    border-radius: 50%;
+    padding: 2px 7px;
+}
+.icons div.message,.BellIcon{
+    
+    background-color: #FDF6ED;
+   padding: 25px;
+}
+
+
+.icons .Profile {
+    display: flex;
+    background-color: #FDF6ED;
+    justify-content: center;
+    align-items: center; /* Added to center the image vertically */
+    height: 36px;
+    width: 36px;
+   padding: 25px;
+    border-radius: 50%;
+    cursor: pointer; /* Make the container circular */
+}
+
+.icons .Profile img {
+  height: 36px;
+  width: 36px;
+    border-radius: 50%; /* Ensure the image itself is also circular */
+   
+    object-fit: contain; /* Preserve aspect ratio while covering the container */
+}
+
+.profile-options{
+    border: 1px solid lightgrey;
+    position: absolute;
+    right:  10px;
+    bottom: 0px;
+
+    height: max-content;
+    top: 50px;
+    display: flex;
+    flex-direction: column;
+  
+ 
+    background-color: #FFFFFF;
+}
+.my-profile,.settings,.logout{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    text-align: center;
+    cursor: pointer;
+    flex: 1;
+    padding: 10px;
+}
+.my-profile:hover,.settings:hover,.logout:hover{
+    background-color:rgb(241, 236, 236) ;
+}

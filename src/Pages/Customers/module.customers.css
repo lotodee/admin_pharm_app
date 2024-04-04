@@ -1,0 +1,18 @@
+.customer-header{    
+    padding: 30px;
+ display: flex;
+ flex-direction: column;
+ gap: 15px;   
+}
+
+.Stats{
+    display: flex;
+    gap: 30px;
+    padding: 0px 0px;
+}
+
+.Stats p{
+    font-size: 13px;
+}
+
+

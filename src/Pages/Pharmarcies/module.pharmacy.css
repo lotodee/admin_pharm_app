@@ -1,0 +1,18 @@
+
+
+.Stats{
+    display: flex;
+    gap: 30px;
+    padding: 0px 0px;
+}
+.pharm-header{
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.table{
+    border: 1px solid grey;
+    padding: 10px 50px;
+
+}

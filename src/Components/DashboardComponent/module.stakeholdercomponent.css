@@ -1,0 +1,27 @@
+.main-Box{
+
+}
+.stake-container{
+   
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+ 
+
+width: 300px;
+    padding: 25px
+}
+.stake-texts{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.stake-topText{
+    font-weight: bold;
+}
+.stake-bottomText{
+    color:rgb(78, 76, 76);
+    font-weight: 50;
+    font-size: 15px;
+}
+.stake-image{}

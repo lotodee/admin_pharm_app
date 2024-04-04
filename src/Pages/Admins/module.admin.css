@@ -1,0 +1,31 @@
+.Admin{
+    
+}
+
+
+
+
+.admin-header{
+   
+    padding: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+.admin-mainText{
+display: flex;
+flex-direction: column;
+gap: 15px;
+}
+ /* .header div h1{
+   font-size: 18px;
+   
+}
+
+.header div p{
+    font-size: 12px;
+   
+    color: #000040;
+} */
+

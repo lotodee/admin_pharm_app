@@ -1,0 +1,13 @@
+.product-header{
+    padding: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.product-mainText{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}

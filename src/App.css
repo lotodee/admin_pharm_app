@@ -1,0 +1,48 @@
+*{
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+body{
+  color: #000040;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  font-family: Aptos, sans-serif;
+}
+
+
+
+.page{
+  overflow-y: auto;
+}
+
+
+.link{
+  
+  text-decoration: none;
+  font-style: none;
+  color: #000040;
+  cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

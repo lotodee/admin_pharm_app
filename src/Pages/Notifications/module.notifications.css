@@ -1,0 +1,19 @@
+.notifications-top-section{
+    
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.left{
+display: flex;
+flex-direction: column;
+gap: 15px;
+}
+
+.notifications-bottom-section{
+    padding: 30px;
+
+}

@@ -1,0 +1,40 @@
+.categories{
+    padding: 40px 30px;
+ 
+   display: flex;
+   flex-direction: column;
+   gap: 40px;
+
+}
+
+.cash{
+    display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+}
+.stakeholder{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

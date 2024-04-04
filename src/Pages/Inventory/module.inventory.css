@@ -1,0 +1,64 @@
+.mainText{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 30px;
+}
+
+.texthead {
+    
+}
+
+.textsubhead {    
+   
+   
+}
+
+
+.Controls{
+    display: flex;    
+    justify-content: space-between;
+    padding:  30px;
+}
+
+
+.InventoryList {
+    padding: 20px 30px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    row-gap: 20px;
+    column-gap: 20px;
+}
+
+.InventoryList article{
+   border: 1px solid #FDF6ED;
+   display: flex;
+   flex-direction: column;
+   padding: 30px;
+   gap: 25px;
+   border-radius: 5px;
+   background-color: #FDF6ED;
+   box-shadow: 0 2px 2px 0 rgb(224, 224, 224);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

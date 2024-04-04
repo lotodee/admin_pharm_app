@@ -1,0 +1,54 @@
+.view-pharmacy-top-section{
+    
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 30px;
+
+}
+
+.view-pharmacy-top{
+   
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.view-pharmacy-left{
+   
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+.text-details{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+}
+.details{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    
+}
+.details img{
+    width: 10px;
+    height: 10px;
+}
+.details p{
+font-size: 15px;
+}
+.view-pharmacy-right{
+ 
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.view-pharmacy-bottom{
+display: flex;
+flex-wrap: wrap;
+justify-content: space-between;
+  
+}

@@ -1,0 +1,11 @@
+.box-and-icon-container{
+  
+    display: flex;
+    align-items: center;
+ border-radius: 5px;
+gap:5px
+}
+.text{
+
+}
+.icon{}
