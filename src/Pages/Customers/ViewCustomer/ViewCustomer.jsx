@@ -88,7 +88,7 @@ const ViewCustomer = () => {
 
         </div>
         <div className="view-customer-bottom">
-        <CashComponent Data={ViewPharmacyCashData }/>
+        {/* <CashComponent Data={ViewPharmacyCashData }/> */}
         </div>
     </div>
     <TableComponent

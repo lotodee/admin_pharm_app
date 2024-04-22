@@ -30,8 +30,8 @@ const Dashboard = () => {
 
        <section className='categories'>
       <div className="cash">
-        <CashComponent Data={DashboardCashData}/>
-     
+        {/* <CashComponent Data={DashboardCashData}/>
+      */}
 
         
 

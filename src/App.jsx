@@ -78,8 +78,9 @@ import AddAdmin from './Pages/Admins/AddAdmin/AddAdmin';
 import { useAuthContext } from './hooks/useAuthContext';
 
 function App() {
+
   return (
-    <Router>
+    <Router >
       <AppContent />
     </Router>
   );
@@ -88,54 +89,54 @@ function App() {
 function AppContent() {
   const { user } = useAuthContext();
   const navigate = useNavigate();
-const {pathname} = useLocation();
+  const { pathname } = useLocation();
+  const [showSide, setShowSide] = useState(user && pathname !== "/login");
+console.log(user)
+  useEffect(() => {
+    if (!user && pathname !== "/login") {
+      navigate("/login");
+    } else if (user && pathname === "/login") {
+      navigate("/dashboard");
+    }
+  }, [user, pathname, navigate]);
 
-const  [showside ,setShowSide] = useState(true);
 
-useEffect(() => {
- if(pathname === "/login"){
-  setShowSide(false)
- }
- if(!user && pathname !== "/login"){
-  navigate("/login")
- }
-}, [pathname])
-
+  useEffect(() => {
+    setShowSide(user && pathname !== "/login");
+  }, [user, pathname]);
 
   return (
     <>
-
-    <Routes>
-        <Route path='/login' element={!user ? <Login /> : <Dashboard /> } />  {/* Login route here */}
+      <Routes>
+        <Route path='/login' element={!user ? <Login /> : <Dashboard />} /> 
       </Routes>
 
-      {showside && (
-   <div style={{ display: 'flex' }}>
-   <Sidebar />
-   <div className='page' style={{ padding: '15px 0px', maxHeight: 'calc(100vh - 30px)', width: '100%' }}>
-     <Routes>
-       <Route path='/dashboard' element={user ? <Dashboard /> : <Login />} />
-       <Route path='/pharmacies' element={<Pharmacies />} />
-       <Route path='/inventory' element={<Inventory />} />
-       <Route path='/products' element={<Products />} />
-       <Route path='/customers' element={<Customers />} />
-       <Route path='/purchase' element={<Purchase />} />
-       <Route path='/reviews' element={<Reviews />} />
-       <Route path='/admins' element={<Admins />} />
-       <Route path='/settings' element={<Settings />} />
-       <Route path='/notifications' element={<Notifications />} />
-       <Route path='/products/addproduct' element={<AddProduct />} />
-       <Route path='/products/editproduct/:id' element={<EditProduct />} />
-       <Route path='/pharmacies/viewpharmacy/:id' element={<ViewPharmacy />} />
-       <Route path='/customers/viewcustomer/:id' element={<ViewCustomer />} />
-       <Route path='/admins/addadmin' element={<AddAdmin />} />
-     </Routes>
-   
-   </div>
- </div>
-
+      {showSide && (
+        <div style={{ display: 'flex' }}>
+          <Sidebar />
+          {/* <div>{user.token}</div> */}
+          <div className='page' style={{ padding: '15px 0px', maxHeight: 'calc(100vh - 30px)', width: '100%' }}>
+            <Routes>
+              <Route path='/dashboard' element={user ? <Dashboard /> : <Login/>} />
+              <Route path='/pharmacies' element={<Pharmacies />} />
+              <Route path='/inventory' element={<Inventory />} />
+              <Route path='/products' element={<Products />} />
+              <Route path='/customers' element={<Customers />} />
+              <Route path='/purchase' element={<Purchase />} />
+              <Route path='/reviews' element={<Reviews />} />
+              <Route path='/admins' element={<Admins />} />
+              <Route path='/settings' element={<Settings />} />
+              <Route path='/notifications' element={<Notifications />} />
+              <Route path='/products/addproduct' element={<AddProduct />} />
+              <Route path='/products/editproduct/:id' element={<EditProduct />} />
+              <Route path='/pharmacies/viewpharmacy/:id' element={<ViewPharmacy />} />
+              <Route path='/customers/viewcustomer/:id' element={<ViewCustomer />} />
+              <Route path='/admins/addadmin' element={<AddAdmin />} />
+              
+            </Routes>
+          </div>
+        </div>
       )}
-   
     </>
   );
 }

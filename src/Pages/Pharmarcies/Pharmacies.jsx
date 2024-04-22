@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Header from '../../Components/header';
 import Sidebar from '../../Components/Sidebar';
 import './module.pharmacy.css';
@@ -6,8 +6,46 @@ import SearchIcon from '../../assets/icons/Search.svg';
 import TableComponent from '../../Components/CommonTableComponent/TableComponent';
 import { CustomerData } from '../TableData';
 import { useLocation } from 'react-router-dom';
+import { useAuthContext } from '../../hooks/useAuthContext';
+import axios from 'axios';
+
 const Pharmacies = () => {
-  const {pathname} = useLocation();
+  const { user } = useAuthContext();
+  const { pathname } = useLocation();
+  const [pharmaciesData, setPharmaciesData] = useState([]); 
+
+
+  useEffect(() => {
+    const fetchPharmaciesData = async () => {
+      try {
+        const response = await axios.get('https://staging.medfinder.com.ng/api/v1/admin/pharmacies', {
+          headers: {
+            Authorization: `Bearer ${user.token}` // Include the token in the Authorization header
+          }
+        });
+        setPharmaciesData(response.data.data);
+      } catch (error) {
+        console.error('Error:', error);
+      }
+    };
+    fetchPharmaciesData();
+  }, [user]); // Dependency array includes 'user' to refetch data when user changes
+
+// console.log("pharm data : " ,pharmaciesData)
+
+
+const formattedData = pharmaciesData.map(item => ({
+  id:item._id,
+  col1: item.company_name,
+  col2: item.admin_approval,
+  col3: item.address,
+  col4: item.email,
+  col5: item.verified
+}));
+
+// Now, formattedData is an array of objects with the required structure
+console.log("this is formatted data: ", formattedData);
+
   return (
     <div>
         <Header  />
@@ -23,107 +61,11 @@ const Pharmacies = () => {
       </div>
       </div>
       
-
-      {/* <div className='table'>
-        <div className='tableheader'>
-        <div className='searchtable'>
-       <img src={SearchIcon} alt="Search"  />
-        <input placeholder='Search Pharmacies...' />
-      </div>
-         
-        
-    
-       <div className='tableButtons'>
-        <div>
-         <p>Filter</p>
-         <img  src="" />
-        </div> 
-
-        <div>
-          <img src="" />  
-          <p>Delete</p>  
-        </div>
-        </div>
-        </div>
-        
-
-        <div className='tableList'>
-            <div>
-            <img src="" alt="" />
-            <h5>PHARMACY</h5>
-            <h5>VERIFICATION</h5>
-            <h5>ADDRESS</h5>
-            <h5>EMAIL</h5>
-            <h5>STATUS</h5>
-            <h5>ACTION</h5>
-            </div>
-
-            <div>
-            <img src="" alt="" />
-            <h5>Gleeworld Pharmacy</h5>
-            <h5>Approved</h5>
-            <h5>44, Gleeworld street,<br /> Lagos, Nigeria</h5>
-            <h5>gleeworld247@gmail.com</h5>
-            <h5>btn</h5>
-            <h5>...</h5>
-            </div>
-
-            <div>
-            <img src="" alt="" />
-            <h5>Gleeworld Pharmacy</h5>
-            <h5>Approved</h5>
-            <h5>44, Gleeworld street,<br /> Lagos, Nigeria</h5>
-            <h5>gleeworld247@gmail.com</h5>
-            <h5>btn</h5>
-            <h5>...</h5>
-            </div>
-
-            <div>
-            <img src="" alt="" />
-            <h5>Gleeworld Pharmacy</h5>
-            <h5>Pending</h5>
-            <h5>44, Gleeworld street,<br /> Lagos, Nigeria</h5>
-            <h5>gleeworld247@gmail.com</h5>
-            <h5>btn</h5>
-            <h5>...</h5>
-            </div>
-
-            <div>
-            <img src="" alt="" />
-            <h5>Gleeworld Pharmacy</h5>
-            <h5>Rejected</h5>
-            <h5>44, Gleeworld street,<br /> Lagos, Nigeria</h5>
-            <h5>gleeworld247@gmail.com</h5>
-            <h5>btn</h5>
-            <h5>...</h5>
-            </div>
-            
-            <div>
-            <img src="" alt="" />
-            <h5>Gleeworld Pharmacy</h5>
-            <h5>Approved</h5>
-            <h5>44, Gleeworld street,<br /> Lagos, Nigeria</h5>
-            <h5>gleeworld247@gmail.com</h5>
-            <h5>btn</h5>
-            <h5>...</h5>
-            </div>
-
-            <div>
-            <img src="" alt="" />
-            <h5>Gleeworld Pharmacy</h5>
-            <h5>Approved</h5>
-            <h5>44, Gleeworld street,<br /> Lagos, Nigeria</h5>
-            <h5>gleeworld247@gmail.com</h5>
-            <h5>btn</h5>
-            <h5>...</h5>
-            </div>
-        </div>
-        </div> */}
 <TableComponent
 
 pathname={pathname}
 placeholder="Search pharmacies..."
-Data={CustomerData}
+Data={formattedData}
 viewlink={true}
 viewPath="/pharmacies/viewpharmacy"
 />

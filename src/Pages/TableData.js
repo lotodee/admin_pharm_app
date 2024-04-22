@@ -1,4 +1,5 @@
-
+import { useAuthContext } from '../hooks/useAuthContext';
+import axios from 'axios';
 
 export const CustomerData = [
   {
@@ -6,6 +7,7 @@ export const CustomerData = [
       col2 : "Approved",
       col3 : "44, Gleeworld street,Lagos, Nigeria",
       col4 : "gleeworld247@gmail.com",
+  
 
 }, 
 {
@@ -13,6 +15,7 @@ export const CustomerData = [
     col2 : "Approved",
     col3 : "44, Gleeworld street,Lagos, Nigeria",
     col4 : "gleeworld247@gmail.com",
+    col5:true
     
 },
 {
@@ -38,6 +41,8 @@ export const CustomerData = [
 },
 
 ]
+
+
 // export const CustomerData = [
 //     {
 //         col1:"Mr Yinka Adewole",
@@ -76,6 +81,7 @@ export const CustomerData = [
 //   },
   
 //   ]
+
 
 export const DashboardData = [
     {

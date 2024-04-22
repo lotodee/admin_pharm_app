@@ -8,24 +8,22 @@ const CashComponent = ({cashImage ,topText , bottomText ,icon,Data}) => {
   return (
 
 <>
-{Data.map((item)=> (
+
 
 <div className='main-Box'>
       
 <div className="container">
-<img className='cashImage' src={item.cashImage} alt="" />
+<img className='cashImage' src={cashImage} alt="" />
  <div className="texts">
-     <p className="topText">{item.topText}</p>
+     <p className="topText">{topText}</p>
     <div className='bottomTextAndImage'>
-    {item.icon && <img className='NairaIcon' src={item.icon} alt="" />}
-     <p className="bottomText">{item.bottomText}</p>
+    {icon && <img className='NairaIcon' src={icon} alt="" />}
+     <p className="bottomText">{bottomText}</p>
     </div>
  </div>
 
 </div>
 </div>
-
-))}
 
 
 </>

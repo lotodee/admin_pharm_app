@@ -188,25 +188,38 @@ const TableComponent = ({pathname, topleftText, showlast, placeholder, Data, wit
                                         {withImage && (
                                             <img src={Panadol} alt=""/>
                                         )}
+
+
                                         <p className="body-product-name">{item.col1}</p>
                                     </div>
+
                                     <p className="body-product-price">{item.col2}</p>
+
+
                                     <p className="body-product-category">{item.col3}</p>
+
+
                                     <p className="body-product-brand">{pathname === "/admins" ? item.col4 : item.col4}</p>
+
+
                                     {pathname === "/customers" || pathname === "/admins" || pathname === "/pharmacies" ? (
-                                        <img src={item.col2 === "Approved" ? approved : pending} alt=""
+                                        <img src={item.col5 === true ? approved : pending} alt=""
                                              className="body-status-img body-product-quantity "/>
                                     ) : (
                                         <p className="body-product-quantity">{item.col5}</p>
                                     )}
+
+
                                     {pathname === "/purchase" || pathname === "/products" ? (
                                         <p className={pathname === "/purchase" ? "body-product-action body-product-supplier" : "body-product-action"}>{item.col6}</p>
                                     ) : (
                                         <p onClick={() => actionClicked(index)} className="body-product-action">...</p>
                                     )}
+
+
                                     {action === index && click && (
                                         <div ref={actionsRef} className="actions-container">
-                                            <Link to={viewlink ? `${viewPath}/${index}` : ``} className='link action-top'>
+                                            <Link to={viewlink ? `${viewPath}/${item.id}` : ``} className='link action-top'>
                                             <div className="">View</div>
                                             </Link>
                                             

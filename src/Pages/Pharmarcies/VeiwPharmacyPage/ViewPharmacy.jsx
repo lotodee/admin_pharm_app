@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import "./module.viewpharmacy.css"
 import back from "../../../assets/images/arrowLeft.svg";
 import filterArrow from '../../../assets/images/filterArrow.svg';
@@ -12,7 +12,43 @@ import CashComponent from '../../../Components/DashboardComponent/CashComponent'
 import { DashboardData } from '../../TableData';
 import TableComponent from '../../../Components/CommonTableComponent/TableComponent';
 import { Link } from 'react-router-dom';
+import received from '../../../assets/images/orderReceived.svg';
+import count from '../../../assets/images/orderCount.svg';
+import rejected from '../../../assets/images/orderRejected.svg';
+import accepted from '../../../assets/images/orderAccepted.svg';
+import { fetchPharmaciesData, fetchPharmaciesInventoryData } from '../../../utils/request';
+import { useAuthContext } from '../../../hooks/useAuthContext';
+import { useParams } from 'react-router-dom';
 const ViewPharmacy = () => {
+  
+const {id} = useParams()
+console.log("pharm id is " , id)
+  const { user } = useAuthContext();
+  const [pharmacyReviewsData, setpharmacyReviewsData] = useState([]); 
+  const [pharmacyInventoryData, setpharmacyInventoryData] = useState([]); 
+
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const pharmacyDataResponse = await fetchPharmaciesData(user.token,id); 
+       const pharmaciesInventoryData =  await fetchPharmaciesInventoryData(user.token,id);
+        
+        setpharmacyReviewsData(Object.values(pharmacyDataResponse))
+        console.log("the pahrm inventrD" , pharmaciesInventoryData)
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
+    fetchData(); 
+   
+  }, [user]); // Dependency array includes 'user' to refetch data when user changes
+
+
+
+
+
   return (
 
     
@@ -72,7 +108,35 @@ const ViewPharmacy = () => {
       </div>
     </div>
     <div className="view-pharmacy-bottom">
-      <CashComponent Data={ViewPharmacyCashData }/>
+
+
+      <CashComponent  topText="Total Order Received"
+      cashImage={received}
+      bottomText={pharmacyReviewsData[0]}
+      />
+
+
+     <CashComponent
+      topText="Inventory Count"
+     bottomText={pharmacyReviewsData[1]}
+    
+     cashImage={count}
+     />
+
+     <CashComponent
+       topText="Order Accepted"
+       bottomText={pharmacyReviewsData[2]}
+      
+       cashImage={accepted}
+     
+     />
+
+     <CashComponent
+      topText="Order Rejected"
+      bottomText={pharmacyReviewsData[3]}
+     
+      cashImage={rejected}
+     />
     </div>
 
 
