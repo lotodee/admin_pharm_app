@@ -1,4 +1,5 @@
-import React, { useState, useEffect, useRef } from 'react';
+/* eslint-disable react/prop-types */
+import  { useState, useEffect, useRef } from 'react';
 import "./module.tablecomponent.css"
 import Search from '../../Components/SearchComponent/Search';
 import BoxAndIcon from '../../Components/BoxAndIconComponent/BoxAndIcon';
@@ -6,7 +7,7 @@ import filterIcon from "../../assets/images/FilterIcon.svg";
 import deleteIcon from "../../assets/images/deleteIcon.svg";
 import Panadol from '../../assets/images/Panadol.svg';
 import filterArrow from '../../assets/images/filterArrow.svg';
-import SearchIcon from '../../assets/icons/Search.svg';
+
 import downloadIcon from '../../assets/images/downloadIcon.svg';
 import approved from "../../assets/images/approved.svg";
 import pending from "../../assets/images/pending.svg";
@@ -166,7 +167,19 @@ const TableComponent = ({pathname, topleftText, showlast, placeholder, Data, wit
 </div>
 
     )}
+{pathname === "/coupons" && (
 
+<div className="head-content">
+  <input  className="head-content-input" type="radio" name="" id="" />
+  <p className="head-product-name">ORGANIZATION</p>
+  <p className="head-product-price">NUMBER OF STAFFS</p>
+  <p className="head-product-category">USAGE DURATION</p>
+  <p className="head-product-brand">LAST USED</p>
+  <p className="head-product-quantity">STATUS</p>
+  <p className="head-product-action">ACTION</p>
+</div>
+
+    )}
 
                     </div>
 
@@ -202,7 +215,7 @@ const TableComponent = ({pathname, topleftText, showlast, placeholder, Data, wit
                                     <p className="body-product-brand">{pathname === "/admins" ? item.col4 : item.col4}</p>
 
 
-                                    {pathname === "/customers" || pathname === "/admins" || pathname === "/pharmacies" ? (
+                                    {pathname === "/customers" || pathname === "/admins" || pathname === "/pharmacies" || pathname === "/coupons"  ? (
                                         <img src={item.col5 === true ? approved : pending} alt=""
                                              className="body-status-img body-product-quantity "/>
                                     ) : (

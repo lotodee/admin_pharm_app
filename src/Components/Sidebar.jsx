@@ -1,6 +1,6 @@
 
 
-import React from 'react';
+
 //import route from './route';
 import {Link} from "react-router-dom";
 import AdminLogo from '../assets/images/Logo.svg'; 
@@ -9,7 +9,7 @@ import './module.sidebar.css';
 import { useLocation } from 'react-router-dom';
 import { useState,useEffect } from 'react';
 import { General,Accounts } from './ComponentsData';
-import { useParams } from 'react-router-dom';
+
 const Sidebar = () => {
 
   const {pathname} = useLocation();

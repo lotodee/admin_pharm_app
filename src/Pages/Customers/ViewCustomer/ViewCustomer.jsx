@@ -1,4 +1,4 @@
-import React from 'react'
+
 import Header from '../../../Components/header'
 import back from "../../../assets/images/arrowLeft.svg";
 import "./module.viewcustomer.css"
@@ -6,14 +6,19 @@ import deleteIcon from "../../../assets/images/deleteIcon.svg";
 import verified from "../../../assets/images/verified.svg";
 import restrict from "../../../assets/images/restrict.svg";
 import BoxAndIcon from '../../../Components/BoxAndIconComponent/BoxAndIcon';
-import customerImage from "../../../assets/images/customerImage.svg"
+
 import { Link } from 'react-router-dom';
 import CommonInputComponent from '../../../Components/CommonInputComponent/CommonInputComponent';
-import CashComponent from '../../../Components/DashboardComponent/CashComponent';
-import { ViewPharmacyCashData } from '../../../Components/ComponentsData';
+
 import TableComponent from '../../../Components/CommonTableComponent/TableComponent';
 import { DashboardData } from '../../TableData';
 import { useLocation } from 'react-router-dom';
+import CashComponent from '../../../Components/DashboardComponent/CashComponent';
+import received from '../../../assets/images/orderReceived.svg';
+import wishlist from '../../../assets/images/wishlist.svg';
+import rejected from '../../../assets/images/orderRejected.svg';
+import accepted from '../../../assets/images/orderAccepted.svg';
+
 const ViewCustomer = () => {
 
     const {pathname} = useLocation();
@@ -69,7 +74,7 @@ const ViewCustomer = () => {
         <div className="view-customer-middle">
          
          <div className="view-customer-middle-left">
-            {/* <img src={customerImage} alt="" className="customer-image" /> */}
+             {/* <img src={dummyImage} alt="" className="customer-image" />  */}
 
          </div>
          <div className="view-customer-middle-right">
@@ -88,7 +93,33 @@ const ViewCustomer = () => {
 
         </div>
         <div className="view-customer-bottom">
-        {/* <CashComponent Data={ViewPharmacyCashData }/> */}
+        <CashComponent  topText="Total Orders "
+      cashImage={received}
+      bottomText="200"
+      />
+ <CashComponent
+      topText="Wishlist"
+     bottomText="15"
+    
+     cashImage={wishlist}
+     />
+
+<CashComponent
+       topText="Orders Bought"
+       bottomText="1002"
+      
+       cashImage={accepted}
+     
+     />
+    
+    
+
+     <CashComponent
+      topText="Orders Cancelled"
+      bottomText="32"
+     
+      cashImage={rejected}
+     />
         </div>
     </div>
     <TableComponent

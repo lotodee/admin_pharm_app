@@ -1,4 +1,4 @@
-import React from "react";
+
 import Header from "../../../Components/header";
 import "./module.addproduct.css";
 import back from "../../../assets/images/arrowLeft.svg";

@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-key */
 
 import BoxAndIcon from '../../../Components/BoxAndIconComponent/BoxAndIcon'
 import Header from '../../../Components/header'
@@ -7,13 +6,17 @@ import back from "../../../assets/images/arrowLeft.svg";
 import click from "../../../assets/images/click.svg";
 import unclick from "../../../assets/images/unclick.svg";
 import restrict from "../../../assets/images/restrict.svg";
-
-import "./module.addadmin.css"
+import "./module.ViewStaff.css"
 import CommonInputComponent from '../../../Components/CommonInputComponent/CommonInputComponent';
 import Search from '../../../Components/SearchComponent/Search';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-const AddAdmin = () => {
+import CashComponent from '../../../Components/DashboardComponent/CashComponent';
+import received from '../../../assets/images/orderReceived.svg';
+import staffs from '../../../assets/images/staffs.svg';
+import rejected from '../../../assets/images/orderRejected.svg';
+import accepted from '../../../assets/images/orderAccepted.svg';
+const ViewStaff = () => {
 
 
    const permissions = [
@@ -35,11 +38,10 @@ const AddAdmin = () => {
    <div className="addadmin-top-section">
    <div className="addadmin-top">
    <div className="addadmin-top-left">
-    <Link to="/admins">
-    
-        <img src={back} alt="" />
-    </Link>
-        <p>New Admin XYZ</p>
+   <Link to="/coupons">
+            <img src={back} alt="" />
+            </Link>
+        <p>myStashTechnologies</p>
     </div>
     <div className="addadmin-top-right">
     <BoxAndIcon
@@ -66,7 +68,7 @@ const AddAdmin = () => {
    </div>
    <div className="addadmin-bottom">
     <div className="addadmin-bottom-left">
- 
+
     </div>
     <div className="addadmin-bottom-right">
     <CommonInputComponent small={true} width="420px"  labelText="Admim Name" />
@@ -75,10 +77,48 @@ const AddAdmin = () => {
 </div>
    </div>
    </div>
+
+
+   <div className="view-staff-cashcomponent">
+  <CashComponent  topText="Total Orders "
+      cashImage={received}
+      bottomText="200"
+      />
+
+<CashComponent
+       topText="Orders Bought"
+       bottomText="1002"
+      
+       cashImage={accepted}
+     
+     />
+     <CashComponent
+      topText="Staffs"
+     bottomText="15"
+    
+     cashImage={staffs}
+     />
+
+    
+
+     <CashComponent
+      topText="Orders Cancelled"
+      bottomText="32"
+     
+      cashImage={rejected}
+     />
+  </div>
+
+
+
    <div className="addadmin-bottom-section">
-    <Search text="Search Permissions"
+    <Search text="Search Staffs..."
     width="500px"
     />
+  
+
+ 
+
 
 
  <div className="permissions">
@@ -93,7 +133,7 @@ const AddAdmin = () => {
         </div>
     </div>
     {permissions.map((item,index)=>(
-  <div className="permissions-body" key={index}>
+  <div className="permissions-body"key={index}>
   <div className="permission-body-left">
       {item.permission}
   </div>
@@ -120,6 +160,6 @@ const AddAdmin = () => {
   )
 }
 
-export default AddAdmin
+export default ViewStaff
 
 

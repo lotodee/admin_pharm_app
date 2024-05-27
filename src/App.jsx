@@ -1,60 +1,6 @@
-// import { useState } from 'react'
-// import reactLogo from './assets/react.svg'
-// import viteLogo from '/vite.svg'
-// import Sidebar from './Components/Sidebar'
-// import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-// import Products from './Pages/Products';
-// import Inventory from './Pages/Inventory';
-
-// import Dashboard from './Pages/Dashboard';
-// import Customers from './Pages/Customers';
-// import Pharmacies from './Pages/Pharmacies';
-// import Reviews from './Pages/Reviews';
-// import Purchase from './Pages/Purchase';
-// import Settings from './Pages/Settings';
-// import Admins from './Pages/Admins';
-// import { useNavigate } from 'react-router-dom';
-// import { useLocation } from 'react-router-dom';
-// function App() {
-  
 
 
-
-
-
-// // useEffect(() => {
-// //   navigate('/dashboard');
-// // }, [navigate]);
-
-//   return (
-//     <>
-       
-//         <Router>    
-//         <div style={{ display:`flex` }}>  
-//          <Sidebar  />
-//         <div className='page' style={{ padding: "15px 0px", maxHeight: "calc(100vh - 30px)" , width:`100%` }}>
-//         <Routes>
-//           <Route path= "/dashboard" element={<Dashboard />} />
-//           <Route path='/pharmacies' element={<Pharmacies />} />
-//           <Route path='/inventory' element={<Inventory />} />
-//           <Route path='/products' element={<Products />} />
-//           <Route path='/customers' element={<Customers />} />
-//           <Route path='/purchase' element={<Purchase />} />
-//           <Route path='/reviews' element={<Reviews />} />
-//           <Route path='/admins' element={<Admins />} />
-//           <Route path='/settings' element={<Settings  />} />
-//         </Routes>
-//         </div>      
-//          </div>     
-//         </Router>
-//     </>
-//   )
-// }
-
-// export default App;
-
-
-import React, { useEffect,useState } from 'react';
+import  { useEffect,useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
 import Sidebar from './Components/Sidebar';
 import Dashboard from './Pages/Dashboard/Dashboard';
@@ -75,7 +21,11 @@ import EditProduct from './Pages/Products/EditProduct/EditProduct';
 import ViewPharmacy from './Pages/Pharmarcies/VeiwPharmacyPage/ViewPharmacy';
 import ViewCustomer from './Pages/Customers/ViewCustomer/ViewCustomer';
 import AddAdmin from './Pages/Admins/AddAdmin/AddAdmin';
+
 import { useAuthContext } from './hooks/useAuthContext';
+import Coupons from './Pages/Coupons/Coupons';
+import ViewStaff from './Pages/Coupons/ViewStaffPage/ViewStaff';
+
 
 function App() {
 
@@ -127,11 +77,14 @@ console.log(user)
               <Route path='/admins' element={<Admins />} />
               <Route path='/settings' element={<Settings />} />
               <Route path='/notifications' element={<Notifications />} />
+              <Route path='/coupons' element={<Coupons />} />
               <Route path='/products/addproduct' element={<AddProduct />} />
               <Route path='/products/editproduct/:id' element={<EditProduct />} />
               <Route path='/pharmacies/viewpharmacy/:id' element={<ViewPharmacy />} />
               <Route path='/customers/viewcustomer/:id' element={<ViewCustomer />} />
               <Route path='/admins/addadmin' element={<AddAdmin />} />
+              <Route path='/coupons/viewstaff/:id' element={<ViewStaff />} />
+             
               
             </Routes>
           </div>

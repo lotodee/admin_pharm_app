@@ -1,7 +1,7 @@
-import React from 'react';
+
 import CommonInputComponent from '../../Components/CommonInputComponent/CommonInputComponent';
 import Header from '../../Components/header';
-import Sidebar from '../../Components/Sidebar';
+
 import './module.settings.css';
 
 

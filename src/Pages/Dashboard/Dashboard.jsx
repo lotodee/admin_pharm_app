@@ -1,11 +1,11 @@
 import React from 'react';
 import Header from '../../Components/header';
-import Sidebar from '../../Components/Sidebar';
+
 import CashFlowicon from "../../assets/images/Cashflow.svg";
 import revenue from '../../assets/images/newRevenue.svg';
 import DownArrow from '../../assets/images/newArrowDown.svg';
 import UpArrow from '../../assets/images/newArrowUp.svg';
-import NairaIcon from "../../assets/images/naira.png";
+
 import Consumers from '../../assets/images/Users.svg';
 import User from '../../assets/images/User.svg';
 import { useLocation } from 'react-router-dom';
@@ -30,8 +30,34 @@ const Dashboard = () => {
 
        <section className='categories'>
       <div className="cash">
-        {/* <CashComponent Data={DashboardCashData}/>
-      */}
+        
+      <CashComponent  topText="Total Cash Flow"
+      cashImage={CashFlowicon}
+      bottomText="N200,000"
+      />
+ <CashComponent
+      topText="Total Revenue "
+     bottomText="23"
+    
+     cashImage={revenue}
+     />
+
+<CashComponent
+       topText="Total Cash Inflow"
+       bottomText="1002"
+      
+       cashImage={DownArrow}
+     
+     />
+    
+    
+
+     <CashComponent
+      topText="Total Cash Outflow"
+      bottomText="32"
+     
+      cashImage={UpArrow}
+     />
 
         
 

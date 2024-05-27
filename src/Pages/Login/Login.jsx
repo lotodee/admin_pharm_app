@@ -1,4 +1,4 @@
-import React from 'react'
+
 import authImageTop from "../../assets/images/authImageTop.svg"
 import "./module.login.css"
 import Logo from '../../assets/images/Logo.svg'; 
@@ -14,8 +14,8 @@ const Login = () => {
   const navigate = useNavigate();
   
 const handleLogin = async() =>{
-  console.log("login clicked")
-  console.log(`Email : ${email}  Password : ${password}`)
+  // console.log("login clicked")
+  // console.log(`Email : ${email}  Password : ${password}`)
  
    await login(email,password)
 

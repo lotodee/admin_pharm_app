@@ -1,0 +1,6 @@
+.view-staff-cashcomponent{
+    padding: 30px;
+    display: flex;
+justify-content: space-between;
+flex-wrap: wrap;
+}

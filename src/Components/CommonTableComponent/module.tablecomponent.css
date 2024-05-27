@@ -75,7 +75,9 @@ margin-left: auto;
     justify-content: space-between;
     font-size: 13px;
     padding: 20px;
-  border-bottom:.5px solid #E2E8F0
+  border-bottom:.5px solid #E2E8F0;
+  color: rgba(0, 0, 64, 1);
+  font-weight: 700;
 }
 
 .head-content-input{

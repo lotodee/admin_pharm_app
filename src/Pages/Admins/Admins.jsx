@@ -1,6 +1,6 @@
-import React from 'react';
+
 import Header from '../../Components/header';
-import Sidebar from '../../Components/Sidebar';
+
 import './module.admin.css';
 import { AdminsData } from '../TableData';
 import plusIcon from '../../assets/images/plusIcon.svg';

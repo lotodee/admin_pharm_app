@@ -41,6 +41,8 @@
 }
 .customer-image{
     object-fit: cover;
+    background-repeat: no-repeat;
+   
 }
 .view-customer-middle-right{
 

@@ -20,6 +20,7 @@ import received from '../assets/images/orderReceived.svg';
 import count from '../assets/images/orderCount.svg';
 import rejected from '../assets/images/orderRejected.svg';
 import accepted from '../assets/images/orderAccepted.svg';
+import coupons from '../assets/images/coupons.svg';
 
 export const General = [
     { url: "/dashboard", img: DashboardIcon, text: "Dashboard" },
@@ -29,7 +30,8 @@ export const General = [
     { url: "/customers", img: CustomerIcon, text: "Customers" },
     { url: "/reviews", img: ReviewsIcon, text: "Reviews" },
     { url: "/purchase", img: PurchaseIcon, text: "Purchase" },
-    { url: "/admins", img: Admins, text: "Admins" }
+    { url: "/admins", img: Admins, text: "Admins" },
+    { url: "/coupons", img: coupons, text: "Coupons" },
   ];
   
 

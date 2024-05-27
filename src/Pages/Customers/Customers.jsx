@@ -1,6 +1,6 @@
-import React from 'react';
+
 import Header from '../../Components/header';
-import Sidebar from '../../Components/Sidebar';
+
 import './module.customers.css';
 
 import { useLocation } from 'react-router-dom';

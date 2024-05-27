@@ -1,4 +1,5 @@
-import React from 'react'
+/* eslint-disable react/prop-types */
+
 import "./module.commoninput.css"
 import upload from "../../assets/images/imageUpload.svg"
 const CommonInputComponent = ({small,DragAndDrop,regular,labelText,placeholder,width,height}) => {
